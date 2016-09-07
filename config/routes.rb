@@ -7,5 +7,7 @@ Rails.application.routes.draw do
     resources :articles
   end
   
+  get '/admin', to: redirect('/admin/articles')
+  
   root to: 'articles#index'
 end

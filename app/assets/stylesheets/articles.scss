@@ -12,4 +12,17 @@
     text-decoration: none;
     color: inherit;
   }
+  // admin
+  &.admin {
+    .new-article-link {
+      float: right;
+    }
+  }
+}
+
+// form
+.new_article, .edit_article {
+  #article_content {
+    min-height: 300px;
+  }
 }

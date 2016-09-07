@@ -1,5 +1,5 @@
 class ArticlesController < ApplicationController
-  before_action :set_article, only: [:show, :edit, :update, :destroy]
+  before_action :set_article, only: [:show, :edit, :update, :destroy, :like]
 
   # GET /articles
   # GET /articles.json
@@ -10,6 +10,11 @@ class ArticlesController < ApplicationController
   # GET /articles/1
   # GET /articles/1.json
   def show
+  end
+  
+  def like
+    @article.increment(:likes)
+    @article.save
   end
   
   private

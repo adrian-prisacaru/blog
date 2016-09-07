@@ -13,5 +13,13 @@
 //= require jquery/dist/jquery
 //= require jquery-ujs/src/rails
 //= require turbolinks
-//= require bootstrap/dist/js/bootstrap
+//= require bootstrap-sass/assets/javascripts/bootstrap-sprockets
 //= require_tree .
+
+function dismissFlash(){
+  $('#flash-messages .alert').remove();
+}
+
+$(document).on("ready turbolinks:load", function(){
+  setTimeout(dismissFlash, 3000);
+});

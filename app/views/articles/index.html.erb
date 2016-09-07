@@ -1,1 +1,7 @@
-<%= render @articles %>
+<div class="articles">
+  <% @articles.each do |article| %>
+    <%= link_to article, class: "article-link" do %>
+      <%= render article, truncate_content: true %>
+    <% end %>
+  <% end %>
+</div>

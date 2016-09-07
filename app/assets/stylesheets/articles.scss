@@ -1,6 +1,15 @@
-.article {
+// show
+ .article {
   margin-bottom: 50px;
   .title {
     text-align: center;
+  }
+}
+
+// index
+.articles {
+  .article-link {
+    text-decoration: none;
+    color: inherit;
   }
 }

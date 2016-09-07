@@ -1,6 +1,11 @@
 <div class="article">
 <h3 class=title> <%= article.title %> </h3>
 <div class="content">
-  <%= article.content %>
+  <!-- truncate the content if a truncate_content argument with a true value was given to the partial  -->
+  <% if defined?(truncate_content) and truncate_content %>
+    <%= truncate(article.content, length: 500) %>
+  <% else %>
+    <%= article.content %>
+  <% end %>
 </div>
 </div>

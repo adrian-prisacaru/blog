@@ -1,4 +1,6 @@
 class Admin::ArticlesController < ArticlesController
+  
+  before_action :is_admin?
 
   # GET /articles/new
   def new
@@ -49,4 +51,14 @@ class Admin::ArticlesController < ArticlesController
       format.json { head :no_content }
     end
   end
+  
+  private
+  
+  def is_admin?
+    unless current_user && current_user.is?(:admin)
+      flash[:danger] = "Not authorized"
+      redirect_to root_path
+    end
+  end
+
 end
